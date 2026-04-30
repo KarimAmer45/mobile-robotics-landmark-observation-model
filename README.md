@@ -7,7 +7,7 @@ Range-only landmark observation likelihoods over a 2D grid map. The implementati
 ```bash
 python - <<'PY'
 import numpy as np
-from ex4 import joint_observation_likelihood
+from mobile_robotics_landmark_observation_model import joint_observation_likelihood
 
 grid = np.zeros((20, 20))
 beacons = np.array([[6, 2], [8, 18], [16, 8]])
