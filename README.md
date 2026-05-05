@@ -19,21 +19,21 @@ print(likelihood.shape, likelihood.max())
 PY
 ```
 
-## Result screenshots
+## Likelihood output
 
 ![mobile-robotics-landmark-observation-model result screenshot](docs/results/result-screenshot.png)
 
 Joint range-observation likelihood heatmap over a 2D grid.
 
 
-## What this demonstrates
+## Sensor-model notes
 
 - Range-only landmark likelihood computation over candidate robot positions.
 - Combination of independent beacon observations into a joint likelihood map.
 - A small probabilistic perception module that can feed localization methods.
 
 
-## Limitations and next steps
+## Follow-up validation
 
 - The model assumes independent Gaussian range errors.
 - It does not include data association or bearing measurements.
