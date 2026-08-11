@@ -14,15 +14,12 @@ def normpdf(x, mu, sigma):
     return y
 
 def landmark_observation_model(z,sigma_r, b, x):
-    ##STUDENT_CODE:  #TODO
     expected_range = dist(b, x)
     prob = normpdf(z, expected_range, sigma_r)
 
-    ##END_STUDENT_CODE:
     return prob
 
 def observation_likelihood(z,sigma_z, b, gridmap):
-    ##STUDENT_CODE:  #TODO
     likelihood = np.zeros_like(gridmap, dtype=float)
     for i in range(gridmap.shape[0]):
         for j in range(gridmap.shape[1]):
@@ -30,11 +27,9 @@ def observation_likelihood(z,sigma_z, b, gridmap):
                 z, sigma_z, b, np.array([i, j])
             )
 
-    ##END_STUDENT_CODE:
     return likelihood
 
 def joint_observation_likelihood(z, sigma_z, b, gridmap):
-    ##STUDENT_CODE:  #TODO    
     z = np.atleast_1d(z)
     sigma_z = np.atleast_1d(sigma_z)
     b = np.atleast_2d(b)
@@ -43,7 +38,6 @@ def joint_observation_likelihood(z, sigma_z, b, gridmap):
     for z_i, sigma_i, beacon_i in zip(z, sigma_z, b):
         joint_likelihood *= observation_likelihood(z_i, sigma_i, beacon_i, gridmap)
 
-    ##END_STUDENT_CODE:
     return joint_likelihood
 
 
